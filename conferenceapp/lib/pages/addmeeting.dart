@@ -13,8 +13,16 @@ class Addmeeting extends StatelessWidget {
   }
 }
 
-class Meeting extends StatelessWidget {
+String? gender;
+
+class Meeting extends StatefulWidget {
   const Meeting({super.key});
+
+  @override
+  State<Meeting> createState() => _MeetingState();
+}
+
+class _MeetingState extends State<Meeting> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +58,7 @@ class Meeting extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 10,
+              height: 0,
             ),
             Padding(
               padding: EdgeInsets.only(left: 20.0),
@@ -60,7 +68,7 @@ class Meeting extends StatelessWidget {
               ),
             ),
             Container(
-              height: 530,
+              height: 620,
               width: 325,
               decoration: BoxDecoration(
                   color: Colors.white, borderRadius: BorderRadius.circular(10)),
@@ -155,9 +163,32 @@ class Meeting extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(left: 20.0),
                     child: Text(
-                      'Is there any Entries Fees   Yes   No',
+                      'Is there any Entries Fees',
                       style: TextStyle(fontSize: 14),
                     ),
+                  ),
+                  RadioListTile(
+                    title: Text("Yes"),
+                    value: "yes",
+                    groupValue: gender,
+                    onChanged: (value) {
+                      setState(() {
+                        gender = value.toString();
+                      });
+                    },
+                  ),
+                  RadioListTile(
+                    title: Text("No"),
+                    value: "no",
+                    groupValue: gender,
+                    onChanged: (value) {
+                      setState(() {
+                        gender = value.toString();
+                      });
+                    },
+                  ),
+                  SizedBox(
+                    height: 0,
                   ),
                   SizedBox(
                     height: 10,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class CreateAccount extends StatelessWidget {
   const CreateAccount({super.key});
@@ -26,7 +27,7 @@ class Createacc extends StatelessWidget {
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
             SizedBox(
-              height: 20,
+              height: 5,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -50,7 +51,7 @@ class Createacc extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 10,
+              height: 5,
             ),
             Padding(
               padding: EdgeInsets.only(left: 20.0),
@@ -60,21 +61,28 @@ class Createacc extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 20,
+              height: 0,
             ),
             Container(
-              height: 500,
+              height: 550,
               width: 325,
               decoration: BoxDecoration(
                   color: Colors.white, borderRadius: BorderRadius.circular(10)),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
-                    height: 5,
-                  ),
-                  SizedBox(
-                    height: 8,
+                  Padding(
+                    padding: EdgeInsets.only(top: 20.0),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SvgPicture.asset(
+                            'assets/profile.svg',
+                            width: 40,
+                            height: 60,
+                            fit: BoxFit.cover,
+                          ),
+                        ]),
                   ),
                   Padding(
                     padding: EdgeInsets.only(left: 100.0),
